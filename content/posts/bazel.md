@@ -128,7 +128,7 @@ chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
 
 ### ワークスペースの立ち上げ
 ### BUILD ファイルの理解
-```bazel:java-tutorial/BUILD
+```bash:java-tutorial/BUILD
  java_binary(
      name = "ProjectRunner",
      srcs = glob(["src/main/java/com/example/*.java"]),
