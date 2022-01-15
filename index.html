@@ -84,17 +84,17 @@
 </h2>
 </header>
 <section class=entry-content>
-<p>https://github.com/bazelbuild/examples https://bazel.build/faq.html
-bazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる
+<p>bazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる
 bazelの特徴 多言語サポート
 Bazelは多くの言語をサポートしており、任意のプログラミング言語をサポートするように拡張可能。 高レベルのビルド言語
 プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。 マルチプラットフォームのサポート
 同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。 再現性
 BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。 スケーラブル
-Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい Googleはなぜbazelを利用するのか Makeの場合 人力でMakefileを書くのは結構辛い Mavenの場合 Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので gradleの場合 Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm
-実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く...</p>
+Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい Googleはなぜbazelを利用するのか Makeの場合 人力でMakefileを書くのは結構辛い Mavenの場合 Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので gradleの場合 Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論しています 参考: https://blog.gradle.org/gradle-vs-bazel-jvm
+対応言語やフレームワーク https://awesomebazel.com/ ほとんど一般的な言語やフレームワークは対応していそうですね。
+実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書きます。...</p>
 </section>
-<footer class=entry-footer><span title="2022-01-10 17:42:02 +0900 +0900">1月 10, 2022</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;lottotto</footer>
+<footer class=entry-footer><span title="2022-01-10 17:42:02 +0900 +0900">1月 10, 2022</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;lottotto</footer>
 <a class=entry-link aria-label="post link to bazel触ってみた" href=https://lottotto.github.io/blog/posts/bazel/></a>
 </article>
 </main>
