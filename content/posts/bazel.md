@@ -39,9 +39,19 @@ https://bazel.build/faq.html
   - Gradleの設定ファイルが読みづらいのが辛い
   - Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい
 
+gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。
+参考: https://blog.gradle.org/gradle-vs-bazel-jvm
+
 
 ## 実際にどのような会社やOSSがbazelを使用しているのか
-https://bazel.build/users.html ここを見よう
+https://bazel.build/users.html に書いてあるが気になった部分を書く
+- 日本企業が少ない。
+  - 2022/01/15現在、LINEだけしかない。まだまだ日本でbazelが受けいられ邸内状態かなと思っている
+- KubernetesはBazelビルドから脱却した
+  - どうやらKubernetesではビルドが煩雑で大変だったのをmakeに統一したようです。
+  - https://github.com/kubernetes/enhancements/issues/2420
+  - https://github.com/kubernetes/kubernetes/issues/88553
+  - 基本ほとんどがGoで書かれているので、まあbazelのおいしさを完全に享受できるとは思わないです。
 
 
 
@@ -60,7 +70,7 @@ chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
 ```
 
 ```bash:実行結果
- k5-saito@k5-saitonoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
+ user@usernoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
  
  Bazel installer
  ---------------
@@ -77,14 +87,14 @@ chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
  
  Bazel is now installed!
  
- Make sure you have "/Users/k5-saito/bin" in your path.
+ Make sure you have "/Users/user/bin" in your path.
  
  For bash completion, add the following line to your :
-   source /Users/k5-saito/.bazel/bin/bazel-complete.bash
+   source /Users/user/.bazel/bin/bazel-complete.bash
  
  For fish shell completion, link this file into your
- /Users/k5-saito/.config/fish/completions/ directory:
-   ln -s /Users/k5-saito/.bazel/bin/bazel.fish /Users/k5-saito/.config/fish/completions/bazel.fish
+ /Users/user/.config/fish/completions/ directory:
+   ln -s /Users/user/.bazel/bin/bazel.fish /Users/user/.config/fish/completions/bazel.fish
  
  See http://bazel.build/docs/getting-started.html to start a new project!
  ```
@@ -112,7 +122,7 @@ chmod +x "bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh"
  1. ビルドする
     - `bazel build //path/to/package:<ビルドターゲット名>`でビルド可能
     ```bash:実行結果
-     k5-saito@k5-saitonoMacBook-Pro java-tutorial % bazel build //:ProjectRunner
+     user@usernoMacBook-Pro java-tutorial % bazel build //:ProjectRunner
     INFO: Analyzed target //:ProjectRunner (0 packages loaded, 0 targets configured).
     INFO: Found 1 target...
     Target //:ProjectRunner up-to-date:
@@ -179,3 +189,10 @@ https://awesomebazel.com/
 https://note.crohaco.net/2020/bazel-golang/
 
 gazelleを利用するのが良い。上の参考サイトがDockerコンテナのビルドまで書いてあって参考になる
+
+
+## 考察
+- システムのポリグロット化やリポジトリのモノリポ化が進んだ際に、bazelの出番。
+- ビルドする際に各言語やフレームワークの環境設定をしなくていいのはとても便利だと思う
+- 参考文献が少なく非常に学習コストが低い。
+- 特にDocker周りは、既存のやり方とかなり異なるので、難易度が高い
