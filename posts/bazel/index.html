@@ -12,8 +12,8 @@ bazelの特徴   多言語サポート
  プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート
  同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性
  BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル
- Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html ここを見よう
-インストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html">
+ Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm
+実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く">
 <meta name=author content="lottotto">
 <link rel=canonical href=https://lottotto.github.io/blog/posts/bazel/>
 <link crossorigin=anonymous href=/blog/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
@@ -37,8 +37,8 @@ bazelの特徴   多言語サポート
  プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート
  同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性
  BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル
- Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html ここを見よう
-インストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html">
+ Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm
+実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lottotto.github.io/blog/posts/bazel/"><meta property="og:image" content="https://lottotto.github.io/blog/papermod-cover.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-01-10T17:42:02+09:00">
@@ -53,10 +53,10 @@ bazelの特徴   多言語サポート
  プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート
  同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性
  BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル
- Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html ここを見よう
-インストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html">
+ Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm
+実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://lottotto.github.io/blog/posts/"},{"@type":"ListItem","position":2,"name":"bazel触ってみた","item":"https://lottotto.github.io/blog/posts/bazel/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"bazel触ってみた","name":"bazel触ってみた","description":"https://github.com/bazelbuild/examples https://bazel.build/faq.html\nbazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる\nbazelの特徴   多言語サポート\n Bazelは多くの言語をサポートしており、任意のプログラミング言語をサポートするように拡張可能。    高レベルのビルド言語\n プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート\n 同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性\n BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル\n Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html ここを見よう\nインストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html","keywords":["bazel"],"articleBody":"https://github.com/bazelbuild/examples https://bazel.build/faq.html\nbazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる\nbazelの特徴   多言語サポート\n Bazelは多くの言語をサポートしており、任意のプログラミング言語をサポートするように拡張可能。    高レベルのビルド言語\n プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート\n 同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性\n BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル\n Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html ここを見よう\nインストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html\nexport BAZEL_VERSION=3.2.0 curl -fLO \"https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh\" # 実行権限をつけて実行 chmod +x \"bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh\" ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user k5-saito@k5-saitonoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user Bazel installer --------------- Bazel is bundled with software licensed under the GPLv2 with Classpath exception. You can find the sources next to the installer on our release page: https://github.com/bazelbuild/bazel/releases # setting authenticate proxy # Binary package at HEAD (@15371720ae0c4) - [Commit](https://github.com/bazelbuild/bazel/commit/15371720ae0c4) Uncompressing......Extracting Bazel installation... . Bazel is now installed! Make sure you have \"/Users/k5-saito/bin\" in your path. For bash completion, add the following line to your : source /Users/k5-saito/.bazel/bin/bazel-complete.bash For fish shell completion, link this file into your /Users/k5-saito/.config/fish/completions/ directory: ln -s /Users/k5-saito/.bazel/bin/bazel.fish /Users/k5-saito/.config/fish/completions/bazel.fish See http://bazel.build/docs/getting-started.html to start a new project! bazelの始め方  WORKSPACEファイルの用意  bazelにおけるワークスペースとは、ビルドするソフトウェアのソースファイルとビルド出力先を含むディレクトリ.各ワークスペースごとにはWORKSPACEというテキストファイルがあり、空も場合もあれば、外部依存関係への参照が含まれている. つまりプロジェクトのルートにはWORKSPACEがあればOK   BUILDファイルの用意  Starlarkという言語を利用して、ビルドターゲットを指定することでBUILDファイルを記述.  java_binary( name = \"ProjectRunner\", srcs = [\"src/main/java/com/example/ProjectRunner.java\"], main_class = \"com.example.ProjectRunner\", deps = [\":greeter\"], ) java_library( name = \"greeter\", srcs = [\"src/main/java/com/example/Greeting.java\"], )  Bazelがビルドするソースコードとその依存関係、そしてbazelが利用するビルドルールなどが記載される   ビルドする  bazel build //path/to/package:でビルド可能  k5-saito@k5-saitonoMacBook-Pro java-tutorial % bazel build //:ProjectRunner INFO: Analyzed target //:ProjectRunner (0 packages loaded, 0 targets configured). INFO: Found 1 target... Target //:ProjectRunner up-to-date: bazel-bin/ProjectRunner.jar bazel-bin/ProjectRunner INFO: Elapsed time: 0.431s, Critical Path: 0.01s INFO: 1 process: 1 internal. INFO: Build completed successfully, 1 total action   サンプルプロジェクトの解説 対象プロジェクトは https://github.com/bazelbuild/examples/tree/main/java-tutorial\nワークスペースの立ち上げ BUILD ファイルの理解 java_binary( name = \"ProjectRunner\", srcs = glob([\"src/main/java/com/example/*.java\"]), ) プロジェクトのビルド $ bazel build //:ProjectRunner 依存関係のグラフを出力 このコマンドを実行すること\nbazel query --notool_deps --noimplicit_deps \"deps(//:ProjectRunner)\" --output graph http://www.webgraphviz.com/ ここで確認する\nbazelビルドを改良する load(\"@rules_java//java:defs.bzl\", \"java_binary\") java_binary( name = \"ProjectRunner\", srcs = [\"src/main/java/com/example/ProjectRunner.java\"], main_class = \"com.example.ProjectRunner\", deps = [\":greeter\"], ) java_library( name = \"greeter\", srcs = [\"src/main/java/com/example/Greeting.java\"], ) bazel build //:ProjectRunner 標準で提供されているビルドルールをみてみよう https://docs.bazel.build/versions/main/be/java.html\n対応言語 https://awesomebazel.com/\nGo言語でBazelを利用する場合 https://note.crohaco.net/2020/bazel-golang/\ngazelleを利用するのが良い。上の参考サイトがDockerコンテナのビルドまで書いてあって参考になる\n","wordCount":"287","inLanguage":"ja","datePublished":"2022-01-10T17:42:02+09:00","dateModified":"2022-01-10T17:42:02+09:00","author":{"@type":"Person","name":"lottotto"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://lottotto.github.io/blog/posts/bazel/"},"publisher":{"@type":"Organization","name":"めもおおおお","logo":{"@type":"ImageObject","url":"https://lottotto.github.io/blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"bazel触ってみた","name":"bazel触ってみた","description":"https://github.com/bazelbuild/examples https://bazel.build/faq.html\nbazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる\nbazelの特徴   多言語サポート\n Bazelは多くの言語をサポートしており、任意のプログラミング言語をサポートするように拡張可能。    高レベルのビルド言語\n プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート\n 同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性\n BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル\n Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm\n実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く","keywords":["bazel"],"articleBody":"https://github.com/bazelbuild/examples https://bazel.build/faq.html\nbazelとは ソースコードをコンパイルして、実行可能形式にしたり、テストをしたりする一連の処理をまとめてやってくれるツールのことをビルドツールと言い、例えばMake,Maven, Gradleなどがある。 もともとgoogle ではBlazeというビルドツールが利用されていて、これをOSS化したのがbazelになる\nbazelの特徴   多言語サポート\n Bazelは多くの言語をサポートしており、任意のプログラミング言語をサポートするように拡張可能。    高レベルのビルド言語\n プロジェクトはBUILDファイルにてで記述。BUILDファイル相互接続された小さなライブラリ、バイナリ、およびテストのセットとしてプロジェクトを記述する簡潔なテキスト形式。対照的に、Makeのようなツールでは、個々のファイルとコンパイラの呼び出しを記述する必要があります。    マルチプラットフォームのサポート\n 同じツールと同じBUILDファイルを使用して、さまざまなアーキテクチャ、さらにはさまざまなプラットフォーム用のソフトウェアを構築可能 GoogleではBazelを使用してデータセンターのシステムで実行されるサーバーアプリケーションから携帯電話で実行されるクライアントアプリまで、あらゆるものを構築。    再現性\n BUILDファイルでは、各ライブラリ、テスト、およびバイナリで直接の依存関係を完全に指定する必要があるため、Bazelはこの依存関係情報を使用して、ソースファイルに変更を加えたときに何を再構築する必要があるか、およびどのタスクを並行して実行できるかを認識。 これはすべてのビルドが常に同じ結果を生成することを意味します。    スケーラブル\n Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバイナリに10万のソースファイルがあるのが一般的であり、ファイルが変更されていないビルドには約200ミリ秒かかかるらしい    Googleはなぜbazelを利用するのか  Makeの場合  人力でMakefileを書くのは結構辛い   Mavenの場合  Javaだけなのが辛い Bazelではコードを再利用可能な単位に細分化することを推奨しており、差分だけをビルドするといったことが可能なので   gradleの場合  Gradleの設定ファイルが読みづらいのが辛い Bazelは各アクションが何を行うかを正確に理解できるのでより並列化され、より再現性が高くなるらしい    gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。 参考: https://blog.gradle.org/gradle-vs-bazel-jvm\n実際にどのような会社やOSSがbazelを使用しているのか https://bazel.build/users.html に書いてあるが気になった部分を書く\n 日本企業が少ない。  2022/01/15現在、LINEだけしかない。まだまだ日本でbazelが受けいられ邸内状態かなと思っている   KubernetesはBazelビルドから脱却した  どうやらKubernetesではビルドが煩雑で大変だったのをmakeに統一したようです。 https://github.com/kubernetes/enhancements/issues/2420 https://github.com/kubernetes/kubernetes/issues/88553 基本ほとんどがGoで書かれているので、まあbazelのおいしさを完全に享受できるとは思わないです。    インストール方法 自分はMacを使用したのでMacでの説明になります 参考: https://docs.bazel.build/versions/4.2.2/install-os-x.html\nexport BAZEL_VERSION=3.2.0 curl -fLO \"https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh\" # 実行権限をつけて実行 chmod +x \"bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh\" ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user user@usernoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user Bazel installer --------------- Bazel is bundled with software licensed under the GPLv2 with Classpath exception. You can find the sources next to the installer on our release page: https://github.com/bazelbuild/bazel/releases # setting authenticate proxy # Binary package at HEAD (@15371720ae0c4) - [Commit](https://github.com/bazelbuild/bazel/commit/15371720ae0c4) Uncompressing......Extracting Bazel installation... . Bazel is now installed! Make sure you have \"/Users/user/bin\" in your path. For bash completion, add the following line to your : source /Users/user/.bazel/bin/bazel-complete.bash For fish shell completion, link this file into your /Users/user/.config/fish/completions/ directory: ln -s /Users/user/.bazel/bin/bazel.fish /Users/user/.config/fish/completions/bazel.fish See http://bazel.build/docs/getting-started.html to start a new project! bazelの始め方  WORKSPACEファイルの用意  bazelにおけるワークスペースとは、ビルドするソフトウェアのソースファイルとビルド出力先を含むディレクトリ.各ワークスペースごとにはWORKSPACEというテキストファイルがあり、空も場合もあれば、外部依存関係への参照が含まれている. つまりプロジェクトのルートにはWORKSPACEがあればOK   BUILDファイルの用意  Starlarkという言語を利用して、ビルドターゲットを指定することでBUILDファイルを記述.  java_binary( name = \"ProjectRunner\", srcs = [\"src/main/java/com/example/ProjectRunner.java\"], main_class = \"com.example.ProjectRunner\", deps = [\":greeter\"], ) java_library( name = \"greeter\", srcs = [\"src/main/java/com/example/Greeting.java\"], )  Bazelがビルドするソースコードとその依存関係、そしてbazelが利用するビルドルールなどが記載される   ビルドする  bazel build //path/to/package:でビルド可能  user@usernoMacBook-Pro java-tutorial % bazel build //:ProjectRunner INFO: Analyzed target //:ProjectRunner (0 packages loaded, 0 targets configured). INFO: Found 1 target... Target //:ProjectRunner up-to-date: bazel-bin/ProjectRunner.jar bazel-bin/ProjectRunner INFO: Elapsed time: 0.431s, Critical Path: 0.01s INFO: 1 process: 1 internal. INFO: Build completed successfully, 1 total action   サンプルプロジェクトの解説 対象プロジェクトは https://github.com/bazelbuild/examples/tree/main/java-tutorial\nワークスペースの立ち上げ BUILD ファイルの理解 java_binary( name = \"ProjectRunner\", srcs = glob([\"src/main/java/com/example/*.java\"]), ) プロジェクトのビルド $ bazel build //:ProjectRunner 依存関係のグラフを出力 このコマンドを実行すること\nbazel query --notool_deps --noimplicit_deps \"deps(//:ProjectRunner)\" --output graph http://www.webgraphviz.com/ ここで確認する\nbazelビルドを改良する load(\"@rules_java//java:defs.bzl\", \"java_binary\") java_binary( name = \"ProjectRunner\", srcs = [\"src/main/java/com/example/ProjectRunner.java\"], main_class = \"com.example.ProjectRunner\", deps = [\":greeter\"], ) java_library( name = \"greeter\", srcs = [\"src/main/java/com/example/Greeting.java\"], ) bazel build //:ProjectRunner 標準で提供されているビルドルールをみてみよう https://docs.bazel.build/versions/main/be/java.html\n対応言語 https://awesomebazel.com/\nGo言語でBazelを利用する場合 https://note.crohaco.net/2020/bazel-golang/\ngazelleを利用するのが良い。上の参考サイトがDockerコンテナのビルドまで書いてあって参考になる\n考察  システムのポリグロット化やリポジトリのモノリポ化が進んだ際に、bazelの出番。 ビルドする際に各言語やフレームワークの環境設定をしなくていいのはとても便利だと思う 参考文献が少なく非常に学習コストが低い。 特にDocker周りは、既存のやり方とかなり異なるので、難易度が高い  ","wordCount":"303","inLanguage":"ja","datePublished":"2022-01-10T17:42:02+09:00","dateModified":"2022-01-10T17:42:02+09:00","author":{"@type":"Person","name":"lottotto"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://lottotto.github.io/blog/posts/bazel/"},"publisher":{"@type":"Organization","name":"めもおおおお","logo":{"@type":"ImageObject","url":"https://lottotto.github.io/blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -133,7 +133,9 @@ bazel触ってみた
 <li>
 <a href=#%e5%af%be%e5%bf%9c%e8%a8%80%e8%aa%9e aria-label=対応言語>対応言語</a></li>
 <li>
-<a href=#go%e8%a8%80%e8%aa%9e%e3%81%a7bazel%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8b%e5%a0%b4%e5%90%88 aria-label=Go言語でBazelを利用する場合>Go言語でBazelを利用する場合</a>
+<a href=#go%e8%a8%80%e8%aa%9e%e3%81%a7bazel%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8b%e5%a0%b4%e5%90%88 aria-label=Go言語でBazelを利用する場合>Go言語でBazelを利用する場合</a></li>
+<li>
+<a href=#%e8%80%83%e5%af%9f aria-label=考察>考察</a>
 </li>
 </ul>
 </div>
@@ -199,8 +201,25 @@ bazel触ってみた
 </ul>
 </li>
 </ul>
+<p>gradle 陣営はbazelを使うとBUILDファイルがめちゃくちゃ増えることなどで管理コストが増大することを理由に反論している。
+参考: <a href=https://blog.gradle.org/gradle-vs-bazel-jvm>https://blog.gradle.org/gradle-vs-bazel-jvm</a></p>
 <h2 id=実際にどのような会社やossがbazelを使用しているのか>実際にどのような会社やOSSがbazelを使用しているのか<a hidden class=anchor aria-hidden=true href=#実際にどのような会社やossがbazelを使用しているのか>#</a></h2>
-<p><a href=https://bazel.build/users.html>https://bazel.build/users.html</a> ここを見よう</p>
+<p><a href=https://bazel.build/users.html>https://bazel.build/users.html</a> に書いてあるが気になった部分を書く</p>
+<ul>
+<li>日本企業が少ない。
+<ul>
+<li>2022/01/15現在、LINEだけしかない。まだまだ日本でbazelが受けいられ邸内状態かなと思っている</li>
+</ul>
+</li>
+<li>KubernetesはBazelビルドから脱却した
+<ul>
+<li>どうやらKubernetesではビルドが煩雑で大変だったのをmakeに統一したようです。</li>
+<li><a href=https://github.com/kubernetes/enhancements/issues/2420>https://github.com/kubernetes/enhancements/issues/2420</a></li>
+<li><a href=https://github.com/kubernetes/kubernetes/issues/88553>https://github.com/kubernetes/kubernetes/issues/88553</a></li>
+<li>基本ほとんどがGoで書かれているので、まあbazelのおいしさを完全に享受できるとは思わないです。</li>
+</ul>
+</li>
+</ul>
 <h2 id=インストール方法>インストール方法<a hidden class=anchor aria-hidden=true href=#インストール方法>#</a></h2>
 <p>自分はMacを使用したのでMacでの説明になります
 参考: <a href=https://docs.bazel.build/versions/4.2.2/install-os-x.html>https://docs.bazel.build/versions/4.2.2/install-os-x.html</a></p>
@@ -210,7 +229,7 @@ curl -fLO <span style=color:#e6db74>&#34;https://github.com/bazelbuild/bazel/rel
 <span style=color:#75715e># 実行権限をつけて実行</span>
 chmod +x <span style=color:#e6db74>&#34;bazel-</span><span style=color:#e6db74>${</span>BAZEL_VERSION<span style=color:#e6db74>}</span><span style=color:#e6db74>-installer-darwin-x86_64.sh&#34;</span>
 ./bazel-<span style=color:#e6db74>${</span>BAZEL_VERSION<span style=color:#e6db74>}</span>-installer-darwin-x86_64.sh --user
-</code></pre></div><pre tabindex=0><code class=language-bash:実行結果 data-lang=bash:実行結果> k5-saito@k5-saitonoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
+</code></pre></div><pre tabindex=0><code class=language-bash:実行結果 data-lang=bash:実行結果> user@usernoMacBook-Pro tmp % ./bazel-${BAZEL_VERSION}-installer-darwin-x86_64.sh --user
  
  Bazel installer
  ---------------
@@ -227,14 +246,14 @@ chmod +x <span style=color:#e6db74>&#34;bazel-</span><span style=color:#e6db74>$
  
  Bazel is now installed!
  
- Make sure you have &quot;/Users/k5-saito/bin&quot; in your path.
+ Make sure you have &quot;/Users/user/bin&quot; in your path.
  
  For bash completion, add the following line to your :
-   source /Users/k5-saito/.bazel/bin/bazel-complete.bash
+   source /Users/user/.bazel/bin/bazel-complete.bash
  
  For fish shell completion, link this file into your
- /Users/k5-saito/.config/fish/completions/ directory:
-   ln -s /Users/k5-saito/.bazel/bin/bazel.fish /Users/k5-saito/.config/fish/completions/bazel.fish
+ /Users/user/.config/fish/completions/ directory:
+   ln -s /Users/user/.bazel/bin/bazel.fish /Users/user/.config/fish/completions/bazel.fish
  
  See http://bazel.build/docs/getting-started.html to start a new project!
 </code></pre><h2 id=bazelの始め方>bazelの始め方<a hidden class=anchor aria-hidden=true href=#bazelの始め方>#</a></h2>
@@ -268,7 +287,7 @@ chmod +x <span style=color:#e6db74>&#34;bazel-</span><span style=color:#e6db74>$
 <ul>
 <li><code>bazel build //path/to/package:&lt;ビルドターゲット名></code>でビルド可能</li>
 </ul>
-<pre tabindex=0><code class=language-bash:実行結果 data-lang=bash:実行結果> k5-saito@k5-saitonoMacBook-Pro java-tutorial % bazel build //:ProjectRunner
+<pre tabindex=0><code class=language-bash:実行結果 data-lang=bash:実行結果> user@usernoMacBook-Pro java-tutorial % bazel build //:ProjectRunner
 INFO: Analyzed target //:ProjectRunner (0 packages loaded, 0 targets configured).
 INFO: Found 1 target...
 Target //:ProjectRunner up-to-date:
@@ -315,6 +334,13 @@ java_library(
 <h2 id=go言語でbazelを利用する場合>Go言語でBazelを利用する場合<a hidden class=anchor aria-hidden=true href=#go言語でbazelを利用する場合>#</a></h2>
 <p><a href=https://note.crohaco.net/2020/bazel-golang/>https://note.crohaco.net/2020/bazel-golang/</a></p>
 <p>gazelleを利用するのが良い。上の参考サイトがDockerコンテナのビルドまで書いてあって参考になる</p>
+<h2 id=考察>考察<a hidden class=anchor aria-hidden=true href=#考察>#</a></h2>
+<ul>
+<li>システムのポリグロット化やリポジトリのモノリポ化が進んだ際に、bazelの出番。</li>
+<li>ビルドする際に各言語やフレームワークの環境設定をしなくていいのはとても便利だと思う</li>
+<li>参考文献が少なく非常に学習コストが低い。</li>
+<li>特にDocker周りは、既存のやり方とかなり異なるので、難易度が高い</li>
+</ul>
 </div>
 <footer class=post-footer>
 <ul class=post-tags>
