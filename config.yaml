@@ -1,5 +1,5 @@
 baseURL: "https://lottotto.github.io/blog/"
-title: めもおおおお
+title: lottoHub
 paginate: 5
 theme: hugo-PaperMod
 
@@ -10,8 +10,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 defaultContentLanguage: "ja"
-# googleAnalytics: UA-123-45
-# publishDir: "docs"
+googleAnalytics: G-JFEXBQC0HV
 
 minify:
   disableXML: true
@@ -96,9 +95,9 @@ params:
   #     icon: icon.png
   #     iconHeight: 35
 
-  # analytics:
-  #     google:
-  #         SiteVerificationTag: "XYZabc"
+  analytics:
+    google:
+      SiteVerificationTag: "G-JFEXBQC0HV"
 
   # assets:
   #     favicon: "<link / abs url>"
