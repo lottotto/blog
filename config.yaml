@@ -10,7 +10,7 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 defaultContentLanguage: "ja"
-googleAnalytics: G-JFEXBQC0HV
+googleAnalytics: UA-217291408-1
 
 minify:
   disableXML: true
@@ -31,6 +31,9 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
+        - name: Search
+          url: search/
+          weight: 20
 
 outputs:
   home:
