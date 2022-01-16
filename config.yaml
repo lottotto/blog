@@ -100,7 +100,7 @@ params:
 
   analytics:
     google:
-      SiteVerificationTag: "G-JFEXBQC0HV"
+      SiteVerificationTag: "UA-217291408-1"
 
   # assets:
   #     favicon: "<link / abs url>"
