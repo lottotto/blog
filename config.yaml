@@ -103,9 +103,9 @@ params:
     google:
       SiteVerificationTag: "cEAh7wHX2RXv01DAtfJ0kKlO2AEfzJyCxNbEMsQYblo"
   sitemap:
-  changefreq: monthly
-  filename: sitemap.xml
-  priority: 0.5
+    changefreq: monthly
+    filename: sitemap.xml
+    priority: 0.5
 
   # assets:
   #     favicon: "<link / abs url>"
