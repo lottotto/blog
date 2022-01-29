@@ -13,7 +13,7 @@ defaultContentLanguage: "ja"
 googleAnalytics: UA-217291408-1
 
 minify:
-  disableXML: true
+  disableXML: false
   # minifyOutput: true
 
 languages:
@@ -102,6 +102,10 @@ params:
   analytics:
     google:
       SiteVerificationTag: "cEAh7wHX2RXv01DAtfJ0kKlO2AEfzJyCxNbEMsQYblo"
+  sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.5
 
   # assets:
   #     favicon: "<link / abs url>"
