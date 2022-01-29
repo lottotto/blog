@@ -1,6 +1,6 @@
 ---
-title: "bazel触ってみた"
-date: 2022-01-10T17:42:02+09:00
+title: "aboutme"
+date: 2022-01-29T13:33:02+09:00
 draft: false
 tags: ["about"]
 ShowToc: true
