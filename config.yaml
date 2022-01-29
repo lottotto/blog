@@ -58,7 +58,7 @@ params:
   ShowCodeCopyButtons: true
   ShowToc: true
   # comments: false
-  images: ["papermod-cover.png"]
+  # images: ["papermod-cover.png"]
 
   profileMode:
     enabled: false
@@ -85,8 +85,8 @@ params:
       url: "https://twitter.com/lottotto96"
     # - name: KoFi
     #   url: "https://ko-fi.com/adityatelange"
-    # - name: RsS
-    #   url: "index.xml"
+    - name: RSS
+      url: "index.xml"
 
   # editPost:
   #   URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
