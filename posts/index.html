@@ -73,6 +73,22 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>go言語のbyte.bufferについて
+</h2>
+</header>
+<section class=entry-content>
+<p>モチベーション Goの受け取ったデータを読んだり書いたりうまくできているのは、ReadメソッドとWriteメソッド、そしてどのメソッドを持つ、io.Reader、io.Writerといったインターフェースである。bytes.bufferをお題に色々忘れないようにメモしていく
+byteとは 1バイトの範囲（1から255）を表すデータ型。 Go言語では、ファイル処理だったり、画像だったり、リクエストだったり色々な面で[]byteが出てくる。 もちろんstringも文字コードで表現されることから2バイトであるので、bytes型のスライスとして表現されることは多い。 []byteとstringの変換は下記の通り
+// []bytes -> string の変換 str := string([]bytes) // string -> []bytesの変換 b := []byte(str) このようにbyte型のスライスは頻出で簡単にstringに変換できる。このbyte型のスライスを色々簡単に操作できるようなパッケージがbytesパッケージになる。詳しくは公式ドキュメント参照。https://pkg.go.dev/byte
+bytesパッケージの中で2つだけ型が宣言されている.bytes.buffer型とreader型である。これをみていく
+bytes.bufferとは bytes.bufferとは、readメソッドとwriteメソッドを持つ可変サイズのバイトバッファーです。 色々おさらいしていきます。bufferとは基本的には、データを一時的に記憶する場所のことを言います。なのでその一時保存領域を読んだり、一時領域に書いたりすることができるわけです。
+// バッファからlen(p)サイズ文を読み取りpに格納する package main import ( "bytes" "fmt" ) func main() { str := "123456789" b := []byte(str) fmt.Println(b) b2 := []byte{0, 0} buf := bytes.NewBuffer(b) _, err := buf.Read(b2) if err != nil { panic(err) } // バッファからlen(p)サイズ文を読み取りpに格納する fmt.Println(string(b2)) } 実行すると12という結果が得られます。b2は2つの領域を定義しており、それが上書きされる挙動になっています。一方Writeの方は、...</p>
+</section>
+<footer class=entry-footer><span title="2022-01-29 17:20:36 +0900 +0900">1月 29, 2022</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;lottotto</footer>
+<a class=entry-link aria-label="post link to go言語のbyte.bufferについて" href=https://lottotto.github.io/blog/posts/go-ioreader/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>bazel触ってみた
 </h2>
 </header>
@@ -89,22 +105,6 @@ Bazelは大規模なビルドを処理可能。 Googleでは、サーバーバ�
 </section>
 <footer class=entry-footer><span title="2022-01-10 17:42:02 +0900 +0900">1月 10, 2022</span>&nbsp;·&nbsp;3 分&nbsp;·&nbsp;lottotto</footer>
 <a class=entry-link aria-label="post link to bazel触ってみた" href=https://lottotto.github.io/blog/posts/bazel/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>go言語のbyte.bufferについて
-</h2>
-</header>
-<section class=entry-content>
-<p>モチベーション Goの受け取ったデータを読んだり書いたりうまくできているのは、ReadメソッドとWriteメソッド、そしてどのメソッドを持つ、io.Reader、io.Writerといったインターフェースである。bytes.bufferをお題に色々忘れないようにメモしていく
-byteとは 1バイトの範囲（1から255）を表すデータ型。 Go言語では、ファイル処理だったり、画像だったり、リクエストだったり色々な面で[]byteが出てくる。 もちろんstringも文字コードで表現されることから2バイトであるので、bytes型のスライスとして表現されることは多い。 []byteとstringの変換は下記の通り
-// []bytes -> string の変換 str := string([]bytes) // string -> []bytesの変換 b := []byte(str) このようにbyte型のスライスは頻出で簡単にstringに変換できる。このbyte型のスライスを色々簡単に操作できるようなパッケージがbytesパッケージになる。詳しくは公式ドキュメント参照。https://pkg.go.dev/byte
-bytesパッケージの中で2つだけ型が宣言されている.bytes.buffer型とreader型である。これをみていく
-bytes.bufferとは bytes.bufferとは、readメソッドとwriteメソッドを持つ可変サイズのバイトバッファーです。 色々おさらいしていきます。bufferとは基本的には、データを一時的に記憶する場所のことを言います。なのでその一時保存領域を読んだり、一時領域に書いたりすることができるわけです。
-// バッファからlen(p)サイズ文を読み取りpに格納する package main import ( "bytes" "fmt" ) func main() { str := "123456789" b := []byte(str) fmt.Println(b) b2 := []byte{0, 0} buf := bytes.NewBuffer(b) _, err := buf.Read(b2) if err != nil { panic(err) } // バッファからlen(p)サイズ文を読み取りpに格納する fmt.Println(string(b2)) } 実行すると12という結果が得られます。b2は2つの領域を定義しており、それが上書きされる挙動になっています。一方Writeの方は、...</p>
-</section>
-<footer class=entry-footer><span title="2022-01-29 17:20:36 +0900 +0900">1月 29, 2022</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;lottotto</footer>
-<a class=entry-link aria-label="post link to go言語のbyte.bufferについて" href=https://lottotto.github.io/blog/posts/go-ioreader/></a>
 </article>
 </main>
 <footer class=footer>
