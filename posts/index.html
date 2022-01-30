@@ -85,7 +85,7 @@ bytes.bufferとは bytes.bufferとは、readメソッドとwriteメソッドを�
 // バッファからlen(p)サイズ文を読み取りpに格納する package main import ( "bytes" "fmt" ) func main() { str := "123456789" b := []byte(str) fmt.Println(b) b2 := []byte{0, 0} buf := bytes.NewBuffer(b) _, err := buf.Read(b2) if err != nil { panic(err) } // バッファからlen(p)サイズ文を読み取りpに格納する fmt.Println(string(b2)) } 実行すると12という結果が得られます。b2は2つの領域を定義しており、それが上書きされる挙動になっています。一方Writeの方は、...</p>
 </section>
 <footer class=entry-footer><span title="2022-01-29 17:20:36 +0900 +0900">1月 29, 2022</span>&nbsp;·&nbsp;1 分&nbsp;·&nbsp;lottotto</footer>
-<a class=entry-link aria-label="post link to go言語のbyte.bufferについて" href=https://lottotto.github.io/blog/posts/go-ioreader/></a>
+<a class=entry-link aria-label="post link to go言語のbyte.bufferについて" href=https://lottotto.github.io/blog/posts/go-bytebuffer/></a>
 </article>
 <article class=post-entry>
 <header class=entry-header>
