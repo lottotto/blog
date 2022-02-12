@@ -2,7 +2,7 @@
 title: "go言語のbyte.bufferについて"
 date: 2022-01-29T17:20:36+09:00
 draft: false
-tags: ["Go言語"]
+tags: ["Go"]
 ShowToc: true
 TocOpen: true
 ---

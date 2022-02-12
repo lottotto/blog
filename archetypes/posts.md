@@ -1,7 +1,7 @@
 ---
 title: ""
 date: {{ .Date }}
-draft: false
+draft: true
 tags: [""]
 ShowToc: true
 TocOpen: true
