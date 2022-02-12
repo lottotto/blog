@@ -3,11 +3,11 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Go言語 | lottoHub</title>
+<title>Go | lottoHub</title>
 <meta name=keywords content>
 <meta name=description content="忘れない- https://lottotto.github.io/blog/">
 <meta name=author content="lottotto">
-<link rel=canonical href=https://lottotto.github.io/blog/tags/go%E8%A8%80%E8%AA%9E/>
+<link rel=canonical href=https://lottotto.github.io/blog/tags/go/>
 <meta name=google-site-verification content="cEAh7wHX2RXv01DAtfJ0kKlO2AEfzJyCxNbEMsQYblo">
 <link crossorigin=anonymous href=/blog/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://lottotto.github.io/blog/favicon.ico>
@@ -18,17 +18,17 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.89.1">
-<link rel=alternate type=application/rss+xml href=https://lottotto.github.io/blog/tags/go%E8%A8%80%E8%AA%9E/index.xml>
+<link rel=alternate type=application/rss+xml href=https://lottotto.github.io/blog/tags/go/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
 </noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-217291408-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Go言語">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-217291408-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Go">
 <meta property="og:description" content="忘れない- https://lottotto.github.io/blog/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://lottotto.github.io/blog/tags/go%E8%A8%80%E8%AA%9E/">
+<meta property="og:url" content="https://lottotto.github.io/blog/tags/go/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Go言語">
+<meta name=twitter:title content="Go">
 <meta name=twitter:description content="忘れない- https://lottotto.github.io/blog/">
 </head>
 <body class=list id=top>
@@ -68,8 +68,27 @@
 </header>
 <main class=main>
 <header class=page-header><div class=breadcrumbs><a href=https://lottotto.github.io/blog/>Home</a>&nbsp;»&nbsp;<a href=https://lottotto.github.io/blog/tags/>Tags</a></div>
-<h1>Go言語</h1>
+<h1>Go</h1>
 </header>
+<article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Opentelemetryで基本的なトレーシングパターンを実装する
+</h2>
+</header>
+<section class=entry-content>
+<p>モチベーション Go言語のOpentelemetryで適当なアプリにトレーシング機能をInstrumentation（計装）した際に、分割して色々なものは対応していたのだが、まとめてやってみたというものがなく、結構苦戦したので忘備録がてら残しておこうと思う。ソースコード全量はGithubにPushしているので面倒な解説はいらねえ！という人はこちらをみてください。 https://github.com/lottotto/gRPC-Database-sample-app/tree/7f4d8f91d0c5d5a675d49e18a058c470d9b34973
+トレースしたいシステム クライアントからgRPC GateWayにhttpで送られたものがgRPC通信でgRPCサーバに転送。gRPCサーバがPostgresにSQLを実行する流れを確認したい。ただしフォーカスとしてはgRPC GateWayからとする。 クライアントからは/に対してbodyに{"name": message} の形式のJSONをPostすることで、データベースにその内容がINSERTされる。またクエリパラメータにそのnameを付与してGETで送ることで、そのnameを持つ行全てを戻す。
+実装のポイント クライアント側 標準ライブラリを用いたhttpサーバの構成方法は他の記事に譲るとして、、、
+TraceProviderの追加 TracerProvider provides access to instrumentation Tracers. TracerProviderとはTracerへのアクセスを提供する。TracerとはStartメソッドを持つInterfaceであり、contextとNameを引数にSpanとContextを作成する機能を持つ。もしこのcontextの中にSpanがあればその子spanとして作成される
+参考:
+https://pkg.go.dev/go.opentelemetry.io/otel/trace#TracerProvider https://pkg.go.dev/go.opentelemetry.io/otel/trace#Tracer
+TracerProviderへの追加はプロセスセーフではないといけないので、main関数の中でかくこと。間違ってもhandlerとか多数のスレッドで呼び出されるところでやってはいけない。 後続のサービスへspanのContextを伝播するには、otel.SetTextMapPropagatorを追記すること。これはリクエスト送る側だけではなく、受け取る側にも必要
+package main import ( "github.com/lottotto/stdgrpc/utils" "go.opentelemetry.io/otel" "go.opentelemetry.io/otel/propagation" ) func main() { // トレースの追加 tp, err := utils.InitTraceProviderStdOut("gRPC", "1.0.0") otel.SetTracerProvider(tp) // 後続のサービスにつなげるためにpropagaterを追加 otel.SetTextMapPropagator( propagation.NewCompositeTextMapPropagator( propagation.TraceContext{}, propagation.Baggage{}, ), ) .... } gRPCインターセプタの追加 gRPCで後続のサービスにリクエストを送るので、gRPCのインターセプタを利用して、gRPCの情報などをtraceの値に入れる。もちろん後続へspanを教えるためにこのメソッドは必要。 grpc.WithUnaryInterceptorを利用し、opentelemetryのUnary通信用のインターセプタを入れる。複数Interceptorを入れる場合はChain何ちゃらを使うこと。 （おまけ）gRPCのコネクションをプールとして利用する場合は、Controllerなりの構造体を作成し、その中にgRPCのconnectionを入れるのが良い。global変数として使うと、変数定義時に死ぬ。
+package main import ( ... "go....</p>
+</section>
+<footer class=entry-footer><span title="2022-02-12 13:25:22 +0900 +0900">2月 12, 2022</span>&nbsp;·&nbsp;2 分&nbsp;·&nbsp;lottotto</footer>
+<a class=entry-link aria-label="post link to Opentelemetryで基本的なトレーシングパターンを実装する" href=https://lottotto.github.io/blog/posts/otelsql-grpc/></a>
+</article>
 <article class="post-entry tag-entry">
 <header class=entry-header>
 <h2>go言語のbyte.bufferについて
