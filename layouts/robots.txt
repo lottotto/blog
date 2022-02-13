@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://lottotto.github.io/blog/sitemap.xml
