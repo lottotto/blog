@@ -40,7 +40,8 @@ outputs:
     - HTML
     - RSS
     - JSON
-    - SITEMAP
+    # - Sitemap
+    # - SITEMAP
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
@@ -164,7 +165,9 @@ markup:
 #     disableInlineCSS: true
 #   twitter:
 #     disableInlineCSS: true
-# sitemap:
-#   changefreq: monthly
-#   filename: sitemap.xml
-#   priority: 0.5
+sitemap:
+  changefreq: weekly
+  filename: sitemap.xml
+  priority: 0.5
+
+hasCJKLanguage: true
