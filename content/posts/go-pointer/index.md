@@ -1,7 +1,7 @@
 ---
 title: "Goのポインタについて"
 date: 2022-02-23T15:36:55+09:00
-draft: true
+draft: false
 tags: [""]
 ShowToc: true
 TocOpen: true

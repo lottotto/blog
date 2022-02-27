@@ -1,7 +1,7 @@
 ---
 title: "今更ながらGo Routineを勉強する"
 date: 2022-02-19T19:47:24+09:00
-draft: true
+draft: false
 tags: [""]
 ShowToc: true
 TocOpen: true
@@ -78,5 +78,5 @@ func main() {
 }
 ```
 
-大体これだけで大丈夫
+基本的な使い方としてはこれで大丈夫だと思う。適宜mutexを利用した排他制御なども見てください
 
