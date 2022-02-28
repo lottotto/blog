@@ -1,4 +1,4 @@
-baseURL: "http://www.lottohub.jp"
+baseURL: "https://www.lottohub.jp"
 title: lottoHub
 paginate: 5
 theme: hugo-PaperMod

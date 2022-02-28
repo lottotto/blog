@@ -2,7 +2,7 @@
 title: "今更ながらGo Routineを勉強する"
 date: 2022-02-19T19:47:24+09:00
 draft: false
-tags: [""]
+tags: ["Go"]
 ShowToc: true
 TocOpen: true
 ---
