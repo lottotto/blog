@@ -10,7 +10,7 @@
 <meta name=author content="lottotto">
 <link rel=canonical href=https://www.lottohub.jp/search/>
 <meta name=google-site-verification content="cEAh7wHX2RXv01DAtfJ0kKlO2AEfzJyCxNbEMsQYblo">
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.87bb1a504fb3d62e18e427bb81970cce1cbafd43e52d6b761ec2e89eaa3edd66.css integrity="sha256-h7saUE+z1i4Y5Ce7gZcMzhy6/UPlLWt2HsLonqo+3WY=" rel="preload stylesheet" as=style><link crossorigin=anonymous rel=preload as=fetch href=../index.json>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.1de1b112c4f9c8264eaa9a986d79d2e7a89fd7fb5adc46d288b14a6fc616d99f.css integrity="sha256-HeGxEsT5yCZOqpqYbXnS56if1/ta3EbSiLFKb8YW2Z8=" rel="preload stylesheet" as=style><link crossorigin=anonymous rel=preload as=fetch href=../index.json>
 <script defer crossorigin=anonymous src=/assets/js/search.min.6a9a7eb2e837edc2f9236bb0c733bf12998c2a01b7c92054b7fbdda7370a68b9.js integrity="sha256-app+sug37cL5I2uwxzO/EpmMKgG3ySBUt/vdpzcKaLk="></script>
 <link rel=icon href=https://www.lottohub.jp/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://www.lottohub.jp/favicon-16x16.png>
@@ -33,8 +33,9 @@
 <meta name=twitter:description content="search">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Search","item":"https://www.lottohub.jp/search/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Search","name":"Search","description":"search","keywords":[],"articleBody":"","wordCount":"0","inLanguage":"ja","datePublished":"0001-01-01T00:00:00Z","dateModified":"0001-01-01T00:00:00Z","author":{"@type":"Person","name":"lottotto"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.lottohub.jp/search/"},"publisher":{"@type":"Organization","name":"lottoHub","logo":{"@type":"ImageObject","url":"https://www.lottohub.jp/favicon.ico"}}}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8721803444159352" crossorigin=anonymous></script>
 </head>
-<body class=list id=" top">
+<body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
@@ -92,6 +93,7 @@ Powered by
 </a>
 <script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark')),mermaidTextContents.forEach((b,a)=>{document.getElementsByClassName("language-mermaid")[a].removeAttribute('data-processed'),document.getElementsByClassName("language-mermaid")[a].innerHTML=b}),mermaid.initialize({theme:document.body.classList.value,startOnLoad:!0}),mermaid.init(void 0,'.language-mermaid')})</script><script>const theme=document.body.classList.value;mermaidTextContents=Array.from(document.getElementsByClassName("language-mermaid")).map(a=>a.innerHTML),mermaid.initialize({theme,startOnLoad:!0}),mermaid.init(void 0,'.language-mermaid')</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light'),theme=''):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'),theme='dark'),mermaidTextContents.forEach((b,a)=>{document.getElementsByClassName("language-mermaid")[a].removeAttribute('data-processed'),document.getElementsByClassName("language-mermaid")[a].innerHTML=b}),mermaid.initialize({theme,startOnLoad:!0}),mermaid.init(void 0,'.language-mermaid')})</script>
+<script>localStorage.getItem("pref-theme")=='dark'?theme='dark':theme='',mermaidTextContents=Array.from(document.getElementsByClassName("language-mermaid")).map(a=>a.innerHTML),mermaid.initialize({theme,startOnLoad:!0}),mermaid.init(void 0,'.language-mermaid')</script>
 </body>
 </html>
