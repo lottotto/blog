@@ -61,6 +61,9 @@ params:
   ShowToc: true
   # comments: false
   # images: ["papermod-cover.png"]
+  params:
+    assets:
+      disableHLJS: true
 
   profileMode:
     enabled: false
@@ -134,13 +137,13 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-#     highlight:
-#         # anchorLineNos: true
-#         codeFences: true
-#         guessSyntax: true
-#         lineNos: true
-#         # noClasses: false
-#         style: monokai
+  # highlight:
+  #   # anchorLineNos: true
+  #   codeFences: true
+  #   guessSyntax: true
+  #   lineNos: false
+  #   # noClasses: false
+  #   style: monokai
 
 # privacy:
 #   vimeo:
