@@ -79,13 +79,6 @@
             document.body.classList.add('dark');
             localStorage.setItem("pref-theme", 'dark');
         }
-        mermaidTextContents.forEach((element, index) => {
-            document.getElementsByClassName("language-mermaid")[index].removeAttribute('data-processed')
-            document.getElementsByClassName("language-mermaid")[index].innerHTML = element
-        })
-
-        mermaid.initialize({ theme: document.body.classList.value, startOnLoad: true });
-        mermaid.init(undefined, '.language-mermaid');
     })
 
 
