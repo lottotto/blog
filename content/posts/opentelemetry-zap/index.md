@@ -1,6 +1,6 @@
 ---
 title: "OpenTelemetryのログ仕様をZAPで実装してみる"
-date: 2022-05-03T21:06:46+09:00
+date: 2022-05-02T21:06:46+09:00
 draft: false
 tags: ["Go"]
 ShowToc: true
