@@ -1,7 +1,7 @@
 ---
 title: "gitlabでカバレッジ, Junit, コード品質のartifactsを全部出す"
 date: 2023-02-25T16:43:20+09:00
-draft: true
+draft: false
 tags: ["gitlab", "java", "CICD"]
 ShowToc: true
 TocOpen: true
