@@ -11,3 +11,8 @@ hugo new posts/build-jar-gitlab/index.md
 ```
 hugo server -D
 ```
+
+## 注意事項
+なぜか私のドメインの設定が悪いのか、ドメイン名を再登録する必要があったりする。
+www.lottohub.jpで登録してね
+
