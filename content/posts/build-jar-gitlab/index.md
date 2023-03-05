@@ -1,5 +1,5 @@
 ---
-title: "gitlabでカバレッジ, Junit, コード品質のartifactsを全部出す"
+title: "gitlabでカバレッジ, Junit, codequalityのartifactsを全部出す"
 date: 2023-02-25T16:43:20+09:00
 draft: false
 tags: ["gitlab", "java", "CICD"]
@@ -70,7 +70,8 @@ convert-to-cobertura:
 参考: https://kiririmode.hatenablog.jp/entry/20220402/1648889452
 
 ## checkstyleレポートからcodequality形式の変更について
-gradle のプラグインでやる方法があったので参考にした。codeclimate形式で出すときはこれはディレクトリがないと失敗するみたいなので、気をつけること。
+gradle のプラグインでやる方法があったので参考にした。codeclimate形式で出すときはこれはディレクトリがないと失敗するみたいなので、気をつけること。  
+2023/03/05追記: 対応されました。https://github.com/tomasbjerre/violations-gradle-plugin/issues/21
 ```groovy
 
 plugins {
