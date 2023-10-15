@@ -85,7 +85,7 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://lottotto.github.io/blog/"
+      url: "https://github.com/lottotto"
     - name: twitter
       url: "https://twitter.com/lottotto96"
     # - name: KoFi
