@@ -1,0 +1,12 @@
+{
+	"filters": {},
+	"rules": {
+		"textlint-rule-no-dropping-the-ra": true,
+		"preset-ja-technical-writing": {
+			"max-ten": {
+				"max": 4
+			},
+			"ja-no-mixed-period": false
+		}
+	}
+}
